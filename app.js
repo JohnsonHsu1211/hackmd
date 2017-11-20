@@ -49,9 +49,7 @@ if (config.usessl) {
   var ca = (function () {
     var i, len, results
     results = []
-    for (i = 0, len = config.sslcapath.length; i < len; i++) {
-      results.push(fs.readFileSync(config.sslcapath[i], 'utf8'))
-    }
+    results.push(fs.readFileSync(config.sslcapath, 'utf8'))
     return results
   })()
   var options = {
